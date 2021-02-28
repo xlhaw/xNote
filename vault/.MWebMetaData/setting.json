@@ -1,0 +1,10 @@
+{
+  "name" : "vault",
+  "fileExtension" : ".md",
+  "autoUploadInsertedImageKey" : "sm.ms (@xlhaw)-https:\/\/sm.ms\/api\/v2\/upload",
+  "autoUploadInsertedImage" : false,
+  "folderType" : 10,
+  "mediaFloder" : "assets\/images",
+  "orderBy" : 0,
+  "newlinesToBR" : 0
+}
