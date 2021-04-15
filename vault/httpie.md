@@ -99,3 +99,36 @@ $ echo '{"hello": "world"}' | http POST example.com/post
 ### References
 
 * <https://github.com/jakubroztocil/httpie>
+
+
+http [flags] [METHOD] URL [ITEM [ITEM]]
+
+Custom HTTP method, HTTP headers and JSON data:
+
+$ http PUT pie.dev/put X-API-Token:123 name=John
+Submitting forms:
+
+$ http -f POST pie.dev/post hello=World
+See the request that is being sent using one of the output options:
+
+$ http -v pie.dev/get
+Build and print a request without sending it using offline mode:
+
+$ http --offline pie.dev/post hello=offline
+Use GitHub API to post a comment on an issue with authentication:
+
+$ http -a USERNAME POST https://api.github.com/repos/httpie/httpie/issues/83/comments body='HTTPie is awesome! :heart:'
+Upload a file using redirected input:
+
+> http pie.dev/post < files/data.json
+
+Download a file and save it via redirected output:
+
+$ http pie.dev/image/png > image.png
+Download a file wget style:
+
+$ http --download pie.dev/image/png
+Use named sessions to make certain aspects of the communication persistent between requests to the same host:
+
+$ http --session=logged-in -a username:password pie.dev/get API-Key:123
+$ http --session=logged-in pie.dev/headers
